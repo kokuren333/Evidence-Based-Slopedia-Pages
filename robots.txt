@@ -1,3 +1,2 @@
 User-agent: *
 Allow: /
-Sitemap: https://kokuren333.github.io/Evidence-Based-Slopedia-Pages/sitemap.xml
