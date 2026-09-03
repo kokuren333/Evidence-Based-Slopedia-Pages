@@ -33,6 +33,50 @@
     "url": "/Evidence-Based-Slopedia-Pages/articles/linear-algebra-concepts/"
   },
   {
+    "id": "art_01K1JI83BP96B7657C443F44F4",
+    "title": "バウムテストの医学的根拠",
+    "slug": "baum-test-medical-evidence",
+    "aliases": [],
+    "category": "生命・健康・医学",
+    "subfield": "心理評価・臨床心理",
+    "summary": "! 50 Assets/Infographics/baum-test-medical-evidence infographic.png",
+    "updated_at": "2026-09-03T12:00:11.227Z",
+    "url": "/Evidence-Based-Slopedia-Pages/articles/baum-test-medical-evidence/"
+  },
+  {
+    "id": "art_01K1JIAJDKD471ED71E174CD12",
+    "title": "虹の見える原理",
+    "slug": "rainbow-formation",
+    "aliases": [],
+    "category": "自然科学・環境",
+    "subfield": "大気光学",
+    "summary": "! 50 Assets/Infographics/rainbow-formation-infographic.webp 図1 太陽光が水滴で屈折・分散し、主虹では内部反射を1回経て観察者へ届く模式図。副虹は内部反射を2回経て色順が逆になる。 1 2",
+    "updated_at": "2026-09-03T12:01:33.201Z",
+    "url": "/Evidence-Based-Slopedia-Pages/articles/rainbow-formation/"
+  },
+  {
+    "id": "art_01K1JKFBNL68D2DDB7953739AA",
+    "title": "男女に知能や能力の違いのエビデンスはあるのか",
+    "slug": "sex-differences-cognition",
+    "aliases": [],
+    "category": "心理・教育・人間発達",
+    "subfield": "認知科学・知能",
+    "summary": "! 50 Assets/Infographics/danjo-no-chino-noryoku-sa infographic.webp",
+    "updated_at": "2026-09-03T12:39:06.366Z",
+    "url": "/Evidence-Based-Slopedia-Pages/articles/sex-differences-cognition/"
+  },
+  {
+    "id": "art_01K1JKGFEHC857A70510ED50A4",
+    "title": "2026年9月時点での遊戯王マスターデュエル最強ビルド",
+    "slug": "master-duel-strongest-build-2026-09",
+    "aliases": [],
+    "category": "人文・歴史・文化・芸術",
+    "subfield": "デジタルゲーム文化",
+    "summary": "! 50 Assets/Infographics/master-duel-strongest-build-2026-09.png 図1 2026年9月の第一候補を、Tier評価・構築枚数・妨害軸で要約した図解。 1 2 4",
+    "updated_at": "2026-09-03T12:39:42.935Z",
+    "url": "/Evidence-Based-Slopedia-Pages/articles/master-duel-strongest-build-2026-09/"
+  },
+  {
     "id": "art_FA3A6B44A79B112D6F95006B73",
     "title": "GPUとは何か――グラフィックボードとの定義の違い",
     "slug": "technology-engineering-computing-ai/computer-hardware/gpu-and-graphics-board",
