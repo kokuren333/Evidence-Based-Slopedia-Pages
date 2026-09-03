@@ -11,14 +11,25 @@
     "url": "/Evidence-Based-Slopedia-Pages/articles/technology-engineering-computing-ai/machine-learning-ai-models/transformer-and-llms/"
   },
   {
+    "id": "art_01K1J7JOT80F1EC2095532E513",
+    "title": "キーとスケールの違い（音楽理論）",
+    "slug": "key-and-scale-difference",
+    "aliases": [],
+    "category": "人文・歴史・文化・芸術",
+    "subfield": "音楽理論",
+    "summary": "! 50 Assets/Infographics/key-and-scale-difference infographic.png",
+    "updated_at": "2026-09-03T08:54:19.412Z",
+    "url": "/Evidence-Based-Slopedia-Pages/articles/key-and-scale-difference/"
+  },
+  {
     "id": "art_FA3A6B44A79B112D6F95006B73",
     "title": "GPUとは何か――グラフィックボードとの定義の違い",
     "slug": "technology-engineering-computing-ai/computer-hardware/gpu-and-graphics-board",
     "aliases": [],
     "category": "技術・工学・コンピューティング・AI",
     "subfield": "コンピュータハードウェア",
-    "summary": "! 50 Assets/Infographics/gpu vs graphics board infographic.png",
-    "updated_at": "2026-09-03T07:36:20.672Z",
+    "summary": "図解：GPUは処理装置、グラフィックボードはGPUなどを載せた製品・拡張カードである。内蔵GPUも存在する。 1 2 3",
+    "updated_at": "2026-09-03T09:47:06.476Z",
     "url": "/Evidence-Based-Slopedia-Pages/articles/technology-engineering-computing-ai/computer-hardware/gpu-and-graphics-board/"
   }
 ]
