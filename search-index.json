@@ -88,6 +88,17 @@
     "url": "/Evidence-Based-Slopedia-Pages/articles/defect-axes/"
   },
   {
+    "id": "art_01K1K1GNN900394D995A970CE4",
+    "title": "計算論的精神医学と計算論的精神科学の世界",
+    "slug": "computational-psychiatry-world",
+    "aliases": [],
+    "category": "生命・健康・医学",
+    "subfield": "計算論的精神医学",
+    "summary": "図1 理論モデル、計算機能、複数レベルのデータを結び、精神症状の機序理解と臨床橋渡しを目指す研究枠組み。RDoCも診断法ではなく研究枠組みと位置づける。 3 4",
+    "updated_at": "2026-09-03T16:27:02.920Z",
+    "url": "/Evidence-Based-Slopedia-Pages/articles/computational-psychiatry-world/"
+  },
+  {
     "id": "art_FA3A6B44A79B112D6F95006B73",
     "title": "GPUとは何か――グラフィックボードとの定義の違い",
     "slug": "technology-engineering-computing-ai/computer-hardware/gpu-and-graphics-board",
