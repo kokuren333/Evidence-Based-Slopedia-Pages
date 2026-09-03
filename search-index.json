@@ -99,6 +99,17 @@
     "url": "/Evidence-Based-Slopedia-Pages/articles/computational-psychiatry-world/"
   },
   {
+    "id": "art_01K1KH8VNB8B989B0C7981804C",
+    "title": "AIや機械学習における蒸留",
+    "slug": "knowledge-distillation",
+    "aliases": [],
+    "category": "技術・工学・コンピューティング・AI",
+    "subfield": "機械学習・AIモデル",
+    "summary": "! 50 Assets/Infographics/knowledge-distillation infographic.png",
+    "updated_at": "2026-09-03T21:08:25.343Z",
+    "url": "/Evidence-Based-Slopedia-Pages/articles/knowledge-distillation/"
+  },
+  {
     "id": "art_FA3A6B44A79B112D6F95006B73",
     "title": "GPUとは何か――グラフィックボードとの定義の違い",
     "slug": "technology-engineering-computing-ai/computer-hardware/gpu-and-graphics-board",
