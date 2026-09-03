@@ -22,6 +22,17 @@
     "url": "/Evidence-Based-Slopedia-Pages/articles/key-and-scale-difference/"
   },
   {
+    "id": "art_01K1JCLQ1E7A12D8C10AD9BD03",
+    "title": "大学教養レベルの線形代数学：概念まとめ",
+    "slug": "linear-algebra-concepts",
+    "aliases": [],
+    "category": "数学・論理・形式体系",
+    "subfield": "線形代数・ベクトル空間",
+    "summary": "! 50 Assets/Infographics/linear-algebra-concepts infographic.png",
+    "updated_at": "2026-09-03T10:22:49.018Z",
+    "url": "/Evidence-Based-Slopedia-Pages/articles/linear-algebra-concepts/"
+  },
+  {
     "id": "art_FA3A6B44A79B112D6F95006B73",
     "title": "GPUとは何か――グラフィックボードとの定義の違い",
     "slug": "technology-engineering-computing-ai/computer-hardware/gpu-and-graphics-board",
