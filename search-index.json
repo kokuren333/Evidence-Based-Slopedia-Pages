@@ -381,7 +381,7 @@
     "category": "人文・歴史・文化・芸術",
     "subfield": "ゲーム・パズル文化",
     "summary": "! 50 Assets/Infographics/wordle-background-mechanics-impact.webp",
-    "updated_at": "2026-09-04T07:17:40.962Z",
+    "updated_at": "2026-09-04T07:48:19.859Z",
     "url": "/Evidence-Based-Slopedia-Pages/articles/wordle/"
   },
   {
@@ -392,7 +392,7 @@
     "category": "自然科学・環境",
     "subfield": "環境汚染と生態リスク",
     "summary": "! 50 Assets/Infographics/microplastics goby metabolome.webp",
-    "updated_at": "2026-09-04T07:23:18.698Z",
+    "updated_at": "2026-09-04T07:48:20.076Z",
     "url": "/Evidence-Based-Slopedia-Pages/articles/goby-microplastics-metabolism/"
   },
   {
@@ -425,8 +425,19 @@
     "category": "経済・ビジネス・仕事",
     "subfield": "労働・生産性とAI__labor-productivity-ai",
     "summary": "Anthropic Economic IndexはAIの経済効果をどう測るのか？国・タスク別の差と仕事への含意を検証する",
-    "updated_at": "2026-09-04T07:41:47.715Z",
+    "updated_at": "2026-09-04T07:48:20.294Z",
     "url": "/Evidence-Based-Slopedia-Pages/articles/anthropic-economic-index-ai-impact/"
+  },
+  {
+    "id": "art_01K1LLQQHE7EFD25ECF5BC3E6F",
+    "title": "「磁性で読むPM2.5」とは何か？燃焼由来鉄粒子の発生源・影響・限界を検証する",
+    "slug": "air-pollution-magnetism",
+    "aliases": [],
+    "category": "自然科学・環境",
+    "subfield": "大気環境・エアロゾル",
+    "summary": "! 磁性で読むPM2.5の概念図 (50 Assets/Infographics/iron nanoparticles air pollution magnetism.png)",
+    "updated_at": "2026-09-04T07:46:42.718Z",
+    "url": "/Evidence-Based-Slopedia-Pages/articles/air-pollution-magnetism/"
   },
   {
     "id": "art_FA3A6B44A79B112D6F95006B73",
