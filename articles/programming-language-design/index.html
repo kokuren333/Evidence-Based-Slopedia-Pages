@@ -1,0 +1,66 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>プログラミング言語の設計要件 | EBS</title><meta name="description" content="Evidence Based Slopedia"><meta property="og:title" content="プログラミング言語の設計要件"><meta property="og:type" content="website"><link rel="icon" href="/Evidence-Based-Slopedia-Pages/assets/favicon.svg"><link rel="stylesheet" href="/Evidence-Based-Slopedia-Pages/assets/ebs.css"><style>.card{container-type:inline-size}.card-media{position:relative}.card-media .hero,.card-media .thumbnail{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;object-position:center}.card-date{position:absolute;top:.45rem;left:.45rem;padding:.15rem .4rem;border-radius:.25rem;background:rgba(0,0,0,.72);color:#fff;font:600 .72rem ui-sans-serif,sans-serif;line-height:1.2}.card-topic{font-size:.78rem;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.card h2{font-size:clamp(.78rem,8cqw,1.2rem);line-height:1.3;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}.card h2 a{overflow-wrap:anywhere;word-break:break-word}@media(max-width:560px){.card h2{-webkit-line-clamp:2;max-height:2.6em}.card>div{overflow:hidden}}</style></head><body><a class="skip-link" href="#content">本文へ移動</a><header class="site-header"><a class="brand" href="/Evidence-Based-Slopedia-Pages/">EBS</a><nav aria-label="主なナビゲーション"><a href="/Evidence-Based-Slopedia-Pages/articles/">Articles</a><a href="/Evidence-Based-Slopedia-Pages/news/">News</a><a href="/Evidence-Based-Slopedia-Pages/forecast/">Forecast</a><a href="/Evidence-Based-Slopedia-Pages/topics/">Topics</a><a href="/Evidence-Based-Slopedia-Pages/recent/">Recent</a><a href="/Evidence-Based-Slopedia-Pages/about/">About</a><a href="/Evidence-Based-Slopedia-Pages/search/">Search</a></nav></header><div id="content"><main><nav class="breadcrumb"><a href="/Evidence-Based-Slopedia-Pages/">EBS</a> / <a href="/Evidence-Based-Slopedia-Pages/topics/%E6%8A%80%E8%A1%93%E3%83%BB%E5%B7%A5%E5%AD%A6%E3%83%BB%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%BBAI/">技術・工学・コンピューティング・AI</a></nav><article><header><p class="kicker">技術・工学・コンピューティング・AI</p><h1>プログラミング言語の設計要件</h1><p class="metadata">更新 2026-09-04 · Revision 2 · Evidence reviewed</p></header><img class="hero" src="/Evidence-Based-Slopedia-Pages/assets/50_Assets/Infographics/programming-language-design-requirements.webp" alt="プログラミング言語の設計要件"><section class="summary-card"><h2>要点</h2><p>図1 プログラミング言語の設計要件は、意味の明確さ・安全性・可読性・実装可能性・相互運用性を、対象領域とコストの制約の下で調整する。 ^1 ^2 ^3</p></section><nav class="toc" aria-label="目次"><h2>目次</h2><ol><li class="level-2"><a href="#h-概要">概要</a></li><li class="level-2"><a href="#h-この記事の見取り図">この記事の見取り図</a></li><li class="level-2"><a href="#h-定義と全体像">定義と全体像</a></li><li class="level-2"><a href="#h-歴史的背景-古典的理解">歴史的背景・古典的理解</a></li><li class="level-2"><a href="#h-現在の標準的理解">現在の標準的理解</a></li><li class="level-2"><a href="#h-詳細説明">詳細説明</a></li><li class="level-3"><a href="#h-1-意味論の明確さと直交性">1. 意味論の明確さと直交性</a></li><li class="level-3"><a href="#h-2-安全性と表現力">2. 安全性と表現力</a></li><li class="level-3"><a href="#h-3-可読性-学習可能性-変更容易性">3. 可読性・学習可能性・変更容易性</a></li><li class="level-3"><a href="#h-4-実装可能性-性能-資源">4. 実装可能性・性能・資源</a></li><li class="level-3"><a href="#h-5-移植性-相互運用性-標準化">5. 移植性・相互運用性・標準化</a></li><li class="level-3"><a href="#h-6-要件を評価可能にする設計手順">6. 要件を評価可能にする設計手順</a></li><li class="level-2"><a href="#h-応用-実践上の含意">応用・実践上の含意</a></li><li class="level-2"><a href="#h-限界-論争点-未解決事項">限界・論争点・未解決事項</a></li><li class="level-2"><a href="#h-まとめ">まとめ</a></li><li class="level-2"><a href="#h-参考ソース">参考ソース</a></li><li class="level-2"><a href="#h-更新履歴">更新履歴</a></li><li class="level-2"><a href="#h-更新日付">更新日付</a></li></ol></nav><div class="content"><p><img src="/Evidence-Based-Slopedia-Pages/assets/50_Assets/Infographics/programming-language-design-requirements.webp" alt="programming-language-design-requirements"></p>
+<p><em>図1　プログラミング言語の設計要件は、意味の明確さ・安全性・可読性・実装可能性・相互運用性を、対象領域とコストの制約の下で調整する。[^1][^2][^3]</em></p>
+<h2 id="h-概要">概要</h2>
+<p>プログラミング言語の設計要件とは、構文を考案することだけではなく、プログラムの意味を明確に定め、利用者が安全に記述・理解・変更でき、実装が現実的な時間と資源で動作し、他の環境や言語と接続できるようにするための要求である。単純性、直交性、可読性、安全性、翻訳速度、実行効率、完全性、移植性などは重要な評価軸だが、すべてを最大化できるとは限らない。[1][2]</p>
+<h2 id="h-この記事の見取り図">この記事の見取り図</h2>
+<p>まず要件を「何を保証するか」と「誰のコストを減らすか」に分ける。次に、歴史的な単純性重視から、現在の型・メモリ・並行性・セキュリティ・標準化までを追い、最後に要件を仕様・実装・評価へ落とす手順と限界を示す。</p>
+<h2 id="h-定義と全体像">定義と全体像</h2>
+<p>言語設計は、構文、静的・動的意味論、型と資源の規則、実行モデル、標準ライブラリ、ツールチェーン、相互運用の境界を一体として設計する活動である。良い要件は、単なる「機能一覧」ではなく、観測可能な性質として書ける。例えば「安全」は、型安全、メモリ安全、並行性上の安全、失敗時の挙動などに分解する。[1][4]</p>
+<p>要件は次の五層で整理できる。</p>
+<ol>
+<li><strong>意味</strong>：仕様が曖昧でなく、実装間で解釈が一致する。</li>
+<li><strong>人間</strong>：読みやすく、学習・デバッグ・レビューが可能である。</li>
+<li><strong>安全</strong>：不正な状態や権限を扱う範囲を狭め、失敗を予測可能にする。</li>
+<li><strong>機械</strong>：翻訳・実行・メモリ管理が対象環境に適合する。</li>
+<li><strong>社会・生態系</strong>：標準化、移植性、既存資産との接続、アクセシビリティを支える。[1]</li>
+</ol>
+<h2 id="h-歴史的背景-古典的理解">歴史的背景・古典的理解</h2>
+<p>初期の言語設計では、機械命令を直接書く負担を減らし、アルゴリズムを構造化して表現することが中心課題だった。Wirthは言語の良さを、極端な簡潔さではなく、透明性・明瞭性・規則的な構造による単純性として論じた。[2] この考え方は、機能を増やすほど相互作用と実装負担が増えるという、現在も有効な設計上の緊張を示す。</p>
+<p>一方、古典的な「単純な言語」は、現代の安全性・並行性・Unicode・分散システム・異種ハードウェアまでを自動的に満たすわけではない。歴史的原則は出発点であり、現在の脅威と利用環境に合わせて再解釈する必要がある。[1][2]</p>
+<h2 id="h-現在の標準的理解">現在の標準的理解</h2>
+<p>ACM/IEEE-CSのCS2023は、言語設計原則として単純性、安全性、速い翻訳、効率的なオブジェクトコード、可読性、直交性、完全性、実装戦略を挙げ、ドメイン適合、相互運用、移植性、形式記述も扱う。[1] これは単一のランキングではなく、設計判断を比較するための共通語彙である。</p>
+<p>仕様は、実装の挙動を再現可能にする契約である。例えばECMAScriptのISO仕様は、言語と組込みライブラリの必要な構成要素を規定し、2025年の確認時点でも現行版とされている。[3] C#の仕様も、単純で現代的な汎用言語という目標と、強い型検査、配列境界検査、未初期化変数の検出、ガベージコレクションなどのソフトウェア工学上の目標を併記している。[5]</p>
+<h2 id="h-詳細説明">詳細説明</h2>
+<h3 id="h-1-意味論の明確さと直交性">1. 意味論の明確さと直交性</h3>
+<p>構文が短くても、文脈によって意味が変わるなら理解と実装のコストが増える。少数の構成要素が予測可能に組み合わさる直交性は、特殊規則を減らし、仕様・コンパイラ・教材・テストを共通化しやすくする。ただし完全な直交性は、利用者に不自然な組み合わせを許すこともあるため、禁止すべき組合せを明示する設計と併用する。[1][2]</p>
+<h3 id="h-2-安全性と表現力">2. 安全性と表現力</h3>
+<p>型検査や資源規則は、実行前に不正な組合せを拒否し、利用者が推論すべき不変条件を減らせる。安全な抽象化では、危険な操作を狭い実装境界に閉じ込め、公開APIと型に利用条件を表すという考え方がある。[6] ただし安全性は「バグがない」ことを意味せず、仕様違反・論理誤り・可用性問題まで自動的に防ぐものでもない。</p>
+<h3 id="h-3-可読性-学習可能性-変更容易性">3. 可読性・学習可能性・変更容易性</h3>
+<p>読みやすさは美的評価だけでなく、レビュー、保守、教育、障害対応のコストに関係する。暗黙の変換、過剰な糖衣構文、例外的な演算子規則は短いコードを生む場合がある一方、局所的な理解を難しくする。設計時には代表的なプログラムを複数の利用者が読んで、誤読箇所を測るべきである。</p>
+<h3 id="h-4-実装可能性-性能-資源">4. 実装可能性・性能・資源</h3>
+<p>言語は仕様だけで完成しない。コンパイラ、インタプリタ、ランタイム、デバッガ、標準ライブラリ、パッケージ管理、診断ツールまでが実用性を決める。翻訳速度、実行効率、メモリ使用量、予測可能な遅延を要件にする場合は、対象ハードウェアと観測方法を先に固定する。性能の主張は、単一ベンチマークではなく、代表ワークロードと再現条件に接続する。[1]</p>
+<h3 id="h-5-移植性-相互運用性-標準化">5. 移植性・相互運用性・標準化</h3>
+<p>ABI、データ表現、FFI、文字列、例外、並行性、ビルド環境の境界を明示しないと、言語単体では動いても生態系で孤立する。標準仕様は実装間の共通基盤になるが、仕様の版、適合範囲、実装差を明示しなければ「標準準拠」という表現だけでは再現性を保証できない。[3]</p>
+<h3 id="h-6-要件を評価可能にする設計手順">6. 要件を評価可能にする設計手順</h3>
+<ol>
+<li>対象領域、利用者、脅威モデル、実行環境を定める。</li>
+<li>必須性質を、例と反例を含む仕様に変換する。</li>
+<li>構文だけでなく意味論、型、資源、失敗、相互運用を定義する。</li>
+<li>小さな参照実装とテストスイートを作り、診断品質を測る。</li>
+<li>学習時間、誤読、欠陥、翻訳時間、実行性能、移植性を複数の代表例で評価する。</li>
+<li>実測されたトレードオフを公開し、要件と仕様を改訂する。</li>
+</ol>
+<h2 id="h-応用-実践上の含意">応用・実践上の含意</h2>
+<p>新言語を設計する場合、最初に「何を簡単にする言語か」を一文で固定する。組込みなら資源上限と時間予測性、データ処理なら表現力と相互運用、教育なら概念数と診断の明瞭さが優先されうる。既存言語を選ぶ場合も、機能数ではなく、必要な安全性・ツール・ライブラリ・標準化・移行コストを要件表にして比較する。</p>
+<p>セキュリティ上は、最小権限、フェイルセーフなデフォルト、完全な仲介、分離、信頼の最小化といった一般原則を、言語・ライブラリ・実行環境の境界へ落とし込むことが有効である。[4] ただし言語機能だけで運用上の権限管理や依存関係の脆弱性を解決できるわけではない。</p>
+<h2 id="h-限界-論争点-未解決事項">限界・論争点・未解決事項</h2>
+<p>第一に、要件間には構造的なトレードオフがある。安全性を強める静的制約は、表現力・学習負荷・実装複雑性を増やすことがある。第二に、「読みやすさ」「簡単さ」「速さ」は利用者・ワークロード・処理系で変わり、単一指標に還元しにくい。第三に、仕様の安全性と実装の安全性は別であり、コンパイラ、ランタイム、標準ライブラリ、FFIのバグが残る。[1][6]</p>
+<p>さらに、既存資産との互換性は短期の採用を促す一方、過去の曖昧な仕様や危険な慣行を固定する可能性がある。英語中心の語彙、文字コード、アクセシビリティ、地域固有の表記も設計要件に含める必要がある。[1] どの要件を優先するかについて、全言語に通用する最適解は確立していない。</p>
+<h2 id="h-まとめ">まとめ</h2>
+<p>プログラミング言語の設計要件は、構文の好みではなく、意味・人間・安全・機械・生態系を接続する検証可能な要求である。単純性と直交性は理解と実装の基盤、安全性と型は不変条件の局所化、可読性は保守可能性、仕様と標準化は再現性と相互運用を支える。最終判断は対象領域と測定結果に依存するため、要件を明示し、反例とトレードオフを公開しながら改訂することが重要である。</p>
+<h2 id="h-参考ソース">参考ソース</h2>
+<ol>
+<li>ACM/IEEE-CS, “Foundations of Programming Languages — FPL-Design,” CS2023, <a href="https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm">https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm</a> （Accessed: 2026-09-04）</li>
+<li>Niklaus Wirth, “On the Design of Programming Languages,” <a href="https://john.cs.olemiss.edu/~hcc/csci658/notes/localcopy/PLHistoryGoodDesign.pdf">https://john.cs.olemiss.edu/~hcc/csci658/notes/localcopy/PLHistoryGoodDesign.pdf</a> （Accessed: 2026-09-04）</li>
+<li>ISO, “ISO/IEC 22275:2018,” <a href="https://www.iso.org/standard/73002.html">https://www.iso.org/standard/73002.html</a> （Accessed: 2026-09-04）</li>
+<li>ACM/IEEE-CS, “Fundamental Principles,” CS2023, <a href="https://csed.acm.org/fundamental-principles/">https://csed.acm.org/fundamental-principles/</a> （Accessed: 2026-09-04）</li>
+<li>Microsoft, “C# language specification — Introduction,” <a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/introduction">https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/introduction</a> （Accessed: 2026-09-04）</li>
+<li>Christoph Kern, “Safe Coding,” Communications of the ACM, <a href="https://doi.org/10.1145/3795888">https://doi.org/10.1145/3795888</a> （Accessed: 2026-09-04）</li>
+</ol>
+<h2 id="h-更新履歴">更新履歴</h2>
+<ul>
+<li>2026-09-04: 初版作成。設計原則、歴史、現行仕様、安全性、評価手順を統合。</li>
+</ul>
+<h2 id="h-更新日付">更新日付</h2>
+<p>2026-09-04</p>
+</div><section class="related"><h2>関連記事</h2><ul><li><a href="/Evidence-Based-Slopedia-Pages/articles/knowledge-distillation/">AIや機械学習における蒸留</a></li><li><a href="/Evidence-Based-Slopedia-Pages/articles/gpt-6-astra-overview/">GPT-6 Astraの概要</a></li><li><a href="/Evidence-Based-Slopedia-Pages/articles/technology-engineering-computing-ai/computer-hardware/gpu-and-graphics-board/">GPUとは何か――グラフィックボードとの定義の違い</a></li><li><a href="/Evidence-Based-Slopedia-Pages/articles/technology-engineering-computing-ai/machine-learning-ai-models/transformer-and-llms/">Transformerの仕組みとLLMとの関連</a></li></ul></section></article></main></div><footer>Evidence Based Slopedia</footer></body></html>
