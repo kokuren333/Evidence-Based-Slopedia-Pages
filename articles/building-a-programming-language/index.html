@@ -1,0 +1,92 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>プログラミング言語を自作するには | EBS</title><meta name="description" content="Evidence Based Slopedia"><meta property="og:title" content="プログラミング言語を自作するには"><meta property="og:type" content="website"><link rel="icon" href="/Evidence-Based-Slopedia-Pages/assets/favicon.svg"><link rel="stylesheet" href="/Evidence-Based-Slopedia-Pages/assets/ebs.css"><style>.card{container-type:inline-size}.card-media{position:relative}.card-media .hero,.card-media .thumbnail{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;object-position:center}.card-date{position:absolute;top:.45rem;left:.45rem;padding:.15rem .4rem;border-radius:.25rem;background:rgba(0,0,0,.72);color:#fff;font:600 .72rem ui-sans-serif,sans-serif;line-height:1.2}.card-topic{font-size:.78rem;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.card h2{font-size:clamp(.78rem,8cqw,1.2rem);line-height:1.3;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}.card h2 a{overflow-wrap:anywhere;word-break:break-word}@media(max-width:560px){.card h2{-webkit-line-clamp:2;max-height:2.6em}.card>div{overflow:hidden}}</style></head><body><a class="skip-link" href="#content">本文へ移動</a><header class="site-header"><a class="brand" href="/Evidence-Based-Slopedia-Pages/">EBS</a><nav aria-label="主なナビゲーション"><a href="/Evidence-Based-Slopedia-Pages/articles/">Articles</a><a href="/Evidence-Based-Slopedia-Pages/news/">News</a><a href="/Evidence-Based-Slopedia-Pages/forecast/">Forecast</a><a href="/Evidence-Based-Slopedia-Pages/topics/">Topics</a><a href="/Evidence-Based-Slopedia-Pages/recent/">Recent</a><a href="/Evidence-Based-Slopedia-Pages/about/">About</a><a href="/Evidence-Based-Slopedia-Pages/search/">Search</a></nav></header><div id="content"><main><nav class="breadcrumb"><a href="/Evidence-Based-Slopedia-Pages/">EBS</a> / <a href="/Evidence-Based-Slopedia-Pages/topics/%E6%8A%80%E8%A1%93%E3%83%BB%E5%B7%A5%E5%AD%A6%E3%83%BB%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%BBAI/">技術・工学・コンピューティング・AI</a></nav><article><header><p class="kicker">技術・工学・コンピューティング・AI</p><h1>プログラミング言語を自作するには</h1><p class="metadata">更新 2026-09-04 · Revision 2 · Evidence reviewed</p></header><img class="hero" src="/Evidence-Based-Slopedia-Pages/assets/50_Assets/Infographics/programming-language-design_infographic.webp" alt="プログラミング言語を自作するには"><section class="summary-card"><h2>要点</h2><p>図解キャプション 言語処理系は、入力文字列を段階的に構造化し、評価またはコード生成へ渡す。 1 2 3 4</p></section><nav class="toc" aria-label="目次"><h2>目次</h2><ol><li class="level-2"><a href="#h-概要">概要</a></li><li class="level-2"><a href="#h-この記事の見取り図">この記事の見取り図</a></li><li class="level-2"><a href="#h-定義と全体像">定義と全体像</a></li><li class="level-2"><a href="#h-歴史的背景-古典的理解">歴史的背景・古典的理解</a></li><li class="level-2"><a href="#h-現在の標準的理解">現在の標準的理解</a></li><li class="level-2"><a href="#h-詳細説明">詳細説明</a></li><li class="level-3"><a href="#h-1-字句解析">1. 字句解析</a></li><li class="level-3"><a href="#h-2-astと構文解析">2. ASTと構文解析</a></li><li class="level-3"><a href="#h-3-自作例-minicalcの評価器">3. 自作例：MiniCalcの評価器</a></li><li class="level-3"><a href="#h-4-評価からコンパイルへ">4. 評価からコンパイルへ</a></li><li class="level-2"><a href="#h-応用-実践上の含意">応用・実践上の含意</a></li><li class="level-2"><a href="#h-限界-論争点-未解決事項">限界・論争点・未解決事項</a></li><li class="level-2"><a href="#h-まとめ">まとめ</a></li><li class="level-2"><a href="#h-参考ソース">参考ソース</a></li><li class="level-2"><a href="#h-更新履歴">更新履歴</a></li><li class="level-2"><a href="#h-更新日付">更新日付</a></li></ol></nav><div class="content"><p><img src="/Evidence-Based-Slopedia-Pages/assets/50_Assets/Infographics/programming-language-design_infographic.webp" alt="programming-language-design_infographic"></p>
+<blockquote>
+<p><strong>図解キャプション</strong>　言語処理系は、入力文字列を段階的に構造化し、評価またはコード生成へ渡す。[1][2][3][4]</p>
+</blockquote>
+<h2 id="h-概要">概要</h2>
+<p>自作言語は、最初から実用言語を目指すのではなく、仕様を小さく固定し、字句解析、構文解析、抽象構文木（AST）、評価器の順に作ると理解しやすい。本稿では、四則演算だけを扱う極小言語「MiniCalc」を例に、動くインタプリタを組み立てる。後半では、コンパイラ、仮想マシン、LLVMへの拡張経路と限界を示す。</p>
+<h2 id="h-この記事の見取り図">この記事の見取り図</h2>
+<ol>
+<li>言語を「文法」と「意味」と「実行」に分ける。</li>
+<li>数値と演算子をトークン化する。</li>
+<li>優先順位を保つ構文解析でASTを作る。</li>
+<li>ASTを再帰的に評価する。</li>
+<li>テスト、エラー、型、実行方式を段階的に追加する。</li>
+</ol>
+<h2 id="h-定義と全体像">定義と全体像</h2>
+<p>プログラミング言語は、文字列の書き方（構文）だけでなく、その構文が何を意味するか（意味論）と、意味を実行へ変換する仕組み（処理系）からなる。典型的な処理の流れは、ソースコード → トークン列 → AST → 評価または中間表現 → 実行である。[1][2][3][4]</p>
+<p>「自作」の最初の目標は、言語仕様を一枚に書ける規模にすることだ。MiniCalcの仕様は、数値、<code>+ - * /</code>、括弧、空白だけとする。<code>*</code>と<code>/</code>を<code>+</code>と<code>-</code>より先に評価し、入力 <code>2 + 3 * 4</code> の結果を14と定める。</p>
+<h2 id="h-歴史的背景-古典的理解">歴史的背景・古典的理解</h2>
+<p>1957年のFORTRAN論文は、数式に近い表記を機械語へ変換する自動コーディングシステムを記述した歴史的一次資料である。[5] 1962年のLISP 1.5 Programmer's Manualは、記号式、関数、リスト構造を中心とする別の言語設計と処理系利用の文脈を示す。[6] ここから分かるのは、言語設計には単一の正解がなく、数値計算、記号処理、教育、組込みなど目的が構文と実行方式を方向づけるという点である。これらの歴史資料を、そのまま現在の実装標準とみなしてはいけない。</p>
+<h2 id="h-現在の標準的理解">現在の標準的理解</h2>
+<p>現代の教材では、字句解析と構文解析を分離し、ASTを後段の評価・コード生成で利用する構成が基本的な学習経路として説明される。[1][2][4] LLVM公式チュートリアルは、Kaleidoscopeを字句解析、再帰下降・演算子優先の構文解析、AST、LLVM IR生成、JITへ段階的に拡張する。[1][2][3] ただし、実際の処理系は型検査、名前解決、最適化、診断、標準ライブラリ、デバッグ情報、パッケージングなどを追加で必要とする。</p>
+<h2 id="h-詳細説明">詳細説明</h2>
+<h3 id="h-1-字句解析">1. 字句解析</h3>
+<pre><code class="language-text">2 + 3 * 4
+NUMBER(2), PLUS, NUMBER(3), STAR, NUMBER(4), EOF
+</code></pre>
+<p>字句解析器は左から文字を読み、数値や記号をトークンへ変換する。未知の文字は位置付きエラーにする。実装の要点は、数値の終端、空白の扱い、入力末尾、エラー位置をテストすることである。</p>
+<h3 id="h-2-astと構文解析">2. ASTと構文解析</h3>
+<p>ASTは括弧や空白をそのまま保存するのではなく、計算の構造を表す。入力 <code>2 + 3 * 4</code> は、<code>+</code>を根にし、左に2、右に<code>*</code>（子は3と4）を持つ木になる。[2]</p>
+<pre><code class="language-text">Expr := Term ((&quot;+&quot; | &quot;-&quot;) Term)*
+Term := Unary ((&quot;*&quot; | &quot;/&quot;) Unary)*
+Unary := (&quot;+&quot; | &quot;-&quot;) Unary | Primary
+Primary := NUMBER | &quot;(&quot; Expr &quot;)&quot;
+</code></pre>
+<p>この文法を再帰下降で実装すると、<code>Expr</code>が<code>Term</code>を呼ぶため、乗除が加減より深い木になる。構文エラーには、期待したトークン、実際のトークン、位置を含める。[2]</p>
+<h3 id="h-3-自作例-minicalcの評価器">3. 自作例：MiniCalcの評価器</h3>
+<p>以下はPythonで書いた最小の実行部分である。字句解析器とパーサがASTを返すと仮定する。</p>
+<pre><code class="language-python">from dataclasses import dataclass
+
+@dataclass
+class Number:
+    value: float
+
+@dataclass
+class Binary:
+    left: object
+    op: str
+    right: object
+
+def evaluate(node):
+    if isinstance(node, Number):
+        return node.value
+    left, right = evaluate(node.left), evaluate(node.right)
+    if node.op == &quot;+&quot;: return left + right
+    if node.op == &quot;-&quot;: return left - right
+    if node.op == &quot;*&quot;: return left * right
+    if node.op == &quot;/&quot;: return left / right
+    raise ValueError(f&quot;unknown operator: {node.op}&quot;)
+
+tree = Binary(Number(2), &quot;+&quot;, Binary(Number(3), &quot;*&quot;, Number(4)))
+assert evaluate(tree) == 14
+</code></pre>
+<p>この例の価値は短さにある。まず木を直接作って評価器を検証し、次に字句解析器とパーサを接続する。<code>1 / 0</code>、閉じ括弧の欠落、未知の文字、空入力を失敗例として固定すると、仕様と実装のずれを発見しやすい。</p>
+<h3 id="h-4-評価からコンパイルへ">4. 評価からコンパイルへ</h3>
+<p>インタプリタはASTを直接評価できる。一方、コンパイラはASTから別の命令列や中間表現を生成し、後段で実行する。LLVMを使う場合、ASTからLLVM IRを生成する道筋が公式チュートリアルで示されているが、LLVMの版とチュートリアルの対応を確認する必要がある。[3] 実用上は、まずインタプリタで意味を確定し、その後にバイトコードやネイティブコードへ進むとデバッグ対象を分離しやすい。</p>
+<h2 id="h-応用-実践上の含意">応用・実践上の含意</h2>
+<ul>
+<li>目的を「学習」「設定ファイル」「DSL」「高速実行」のいずれかに絞る。目的が異なれば、型、エラー、実行方式の優先順位も変わる。</li>
+<li>文法を書いてから実装し、正常系と異常系を同じテスト表に置く。</li>
+<li>最初は数値だけ、次に変数、関数、条件分岐の順で拡張する。各段階で言語リファレンスとサンプルを更新する。</li>
+<li>教材のコードは設計上の簡略化を含む。LLVM自身もKaleidoscopeを教育用に単純化した例として位置づけている。[1]</li>
+</ul>
+<h2 id="h-限界-論争点-未解決事項">限界・論争点・未解決事項</h2>
+<p>「最適な」構文解析法や実行方式はない。再帰下降、演算子優先法、パーサジェネレータなどは文法、エラー回復、保守性の要求で選ぶ。[2][4] 動的型付けと静的型付け、ガベージコレクションと手動管理、インタプリタとコンパイラにもトレードオフがある。小さな例から性能、安全性、互換性を外挿することはできない。また、診断品質、Unicode、浮動小数点、整数オーバーフロー、並行性、標準ライブラリまで含めると、言語処理系は急速に大きくなる。したがって、本稿のMiniCalcは「実用言語の完成品」ではなく、処理系の境界を学ぶ再現可能な足場である。</p>
+<h2 id="h-まとめ">まとめ</h2>
+<p>自作言語の第一歩は、壮大な機能表ではなく、短い仕様と一つの実行例である。MiniCalcでは、トークン、AST、評価器を分離することで、<code>2 + 3 * 4</code>を14へ変換する経路を検証できる。そこからテスト、診断、変数、型、バイトコード、LLVM IRへ一段ずつ進める。[1][2][3][4]</p>
+<h2 id="h-参考ソース">参考ソース</h2>
+<ol>
+<li>LLVM Project, “My First Language Frontend with LLVM Tutorial,” <a href="https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/">https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/</a> (Accessed 2026-09-04).</li>
+<li>LLVM Project, “Kaleidoscope: Implementing a Parser and AST,” <a href="https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/LangImpl02.html">https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/LangImpl02.html</a> (Accessed 2026-09-04).</li>
+<li>LLVM Project, “Kaleidoscope: Code generation to LLVM IR,” <a href="https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/LangImpl03.html">https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/LangImpl03.html</a> (Accessed 2026-09-04).</li>
+<li>Robert Nystrom, <em>Crafting Interpreters</em>, <a href="https://craftinginterpreters.com/">https://craftinginterpreters.com/</a> (Accessed 2026-09-04).</li>
+<li>J. W. Backus et al., “The FORTRAN Automatic Coding System,” 1957, <a href="https://softwarepreservation.computerhistory.org/FORTRAN/paper/BackusEtAl-FortranAutomaticCodingSystem-1957.pdf">https://softwarepreservation.computerhistory.org/FORTRAN/paper/BackusEtAl-FortranAutomaticCodingSystem-1957.pdf</a> (Accessed 2026-09-04).</li>
+<li>MIT Computation Center / John McCarthy, <em>LISP 1.5 Programmer's Manual</em>, 1962, <a href="https://books.google.com/books?id=3loZAQAAIAAJ">https://books.google.com/books?id=3loZAQAAIAAJ</a> (Accessed 2026-09-04).</li>
+</ol>
+<h2 id="h-更新履歴">更新履歴</h2>
+<ul>
+<li>2026-09-04: 新規作成。MiniCalcの最小例、歴史的背景、現代の実装経路、限界を追加。</li>
+</ul>
+<h2 id="h-更新日付">更新日付</h2>
+<p>2026-09-04</p>
+</div><section class="related"><h2>関連記事</h2><ul><li><a href="/Evidence-Based-Slopedia-Pages/articles/knowledge-distillation/">AIや機械学習における蒸留</a></li><li><a href="/Evidence-Based-Slopedia-Pages/articles/gpt-6-astra-overview/">GPT-6 Astraの概要</a></li><li><a href="/Evidence-Based-Slopedia-Pages/articles/technology-engineering-computing-ai/computer-hardware/gpu-and-graphics-board/">GPUとは何か――グラフィックボードとの定義の違い</a></li><li><a href="/Evidence-Based-Slopedia-Pages/articles/technology-engineering-computing-ai/machine-learning-ai-models/transformer-and-llms/">Transformerの仕組みとLLMとの関連</a></li><li><a href="/Evidence-Based-Slopedia-Pages/articles/programming-language-design/">プログラミング言語の設計要件</a></li></ul></section></article></main></div><footer>Evidence Based Slopedia</footer></body></html>
