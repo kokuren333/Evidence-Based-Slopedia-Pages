@@ -1,0 +1,66 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>コンパイラとインタプリタ | EBS</title><meta name="description" content="Evidence Based Slopedia"><meta property="og:title" content="コンパイラとインタプリタ"><meta property="og:type" content="website"><link rel="icon" href="/Evidence-Based-Slopedia-Pages/assets/favicon.svg"><link rel="stylesheet" href="/Evidence-Based-Slopedia-Pages/assets/ebs.css"><style>.card{container-type:inline-size}.card-media{position:relative}.card-media .hero,.card-media .thumbnail{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;object-position:center}.card-date{position:absolute;top:.45rem;left:.45rem;padding:.15rem .4rem;border-radius:.25rem;background:rgba(0,0,0,.72);color:#fff;font:600 .72rem ui-sans-serif,sans-serif;line-height:1.2}.card-topic{font-size:.78rem;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.card h2{font-size:clamp(.78rem,8cqw,1.2rem);line-height:1.3;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}.card h2 a{overflow-wrap:anywhere;word-break:break-word}@media(max-width:560px){.card h2{-webkit-line-clamp:2;max-height:2.6em}.card>div{overflow:hidden}}</style></head><body><a class="skip-link" href="#content">本文へ移動</a><header class="site-header"><a class="brand" href="/Evidence-Based-Slopedia-Pages/">EBS</a><nav aria-label="主なナビゲーション"><a href="/Evidence-Based-Slopedia-Pages/articles/">Articles</a><a href="/Evidence-Based-Slopedia-Pages/news/">News</a><a href="/Evidence-Based-Slopedia-Pages/forecast/">Forecast</a><a href="/Evidence-Based-Slopedia-Pages/topics/">Topics</a><a href="/Evidence-Based-Slopedia-Pages/recent/">Recent</a><a href="/Evidence-Based-Slopedia-Pages/about/">About</a><a href="/Evidence-Based-Slopedia-Pages/search/">Search</a></nav></header><div id="content"><main><nav class="breadcrumb"><a href="/Evidence-Based-Slopedia-Pages/">EBS</a> / <a href="/Evidence-Based-Slopedia-Pages/topics/%E6%8A%80%E8%A1%93%E3%83%BB%E5%B7%A5%E5%AD%A6%E3%83%BB%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%BBAI/">技術・工学・コンピューティング・AI</a></nav><article><header><p class="kicker">技術・工学・コンピューティング・AI</p><h1>コンパイラとインタプリタ</h1><p class="metadata">更新 2026-09-04 · Revision 2 · Evidence reviewed</p></header><img class="hero" src="/Evidence-Based-Slopedia-Pages/assets/50_Assets/Infographics/%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%A9%E3%81%A8%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%97%E3%83%AA%E3%82%BF__compiler-interpreter_infographic.webp" alt="コンパイラとインタプリタ"><section class="summary-card"><h2>要点</h2><p>図1 処理系の典型的な流れ。コンパイルと解釈は排他的な二分類ではなく、LLVMのJITやバイトコード実行系のように組み合わせられる 1 2 5 。</p></section><nav class="toc" aria-label="目次"><h2>目次</h2><ol><li class="level-2"><a href="#h-概要">概要</a></li><li class="level-2"><a href="#h-この記事の見取り図">この記事の見取り図</a></li><li class="level-2"><a href="#h-定義と全体像">定義と全体像</a></li><li class="level-3"><a href="#h-コンパイラ">コンパイラ</a></li><li class="level-3"><a href="#h-インタプリタ">インタプリタ</a></li><li class="level-3"><a href="#h-比較の軸">比較の軸</a></li><li class="level-2"><a href="#h-歴史的背景-古典的理解">歴史的背景・古典的理解</a></li><li class="level-2"><a href="#h-現在の標準的理解">現在の標準的理解</a></li><li class="level-3"><a href="#h-共通するフロントエンド">共通するフロントエンド</a></li><li class="level-3"><a href="#h-中間表現と最適化">中間表現と最適化</a></li><li class="level-3"><a href="#h-実行時コンパイル">実行時コンパイル</a></li><li class="level-2"><a href="#h-詳細説明">詳細説明</a></li><li class="level-3"><a href="#h-aotコンパイル">AOTコンパイル</a></li><li class="level-3"><a href="#h-構文木を直接評価するインタプリタ">構文木を直接評価するインタプリタ</a></li><li class="level-3"><a href="#h-バイトコード仮想マシン">バイトコード仮想マシン</a></li><li class="level-3"><a href="#h-実務的な見方">実務的な見方</a></li><li class="level-2"><a href="#h-応用-実践上の含意">応用・実践上の含意</a></li><li class="level-2"><a href="#h-限界-論争点-未解決事項">限界・論争点・未解決事項</a></li><li class="level-2"><a href="#h-まとめ">まとめ</a></li><li class="level-2"><a href="#h-参考ソース">参考ソース</a></li><li class="level-2"><a href="#h-更新履歴">更新履歴</a></li><li class="level-2"><a href="#h-更新日付">更新日付</a></li></ol></nav><div class="content"><h1>コンパイラとインタプリタ</h1>
+<p><img src="/Evidence-Based-Slopedia-Pages/assets/50_Assets/Infographics/%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%A9%E3%81%A8%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%97%E3%83%AA%E3%82%BF__compiler-interpreter_infographic.webp" alt="コンパイラとインタプリタ__compiler-interpreter_infographic"></p>
+<p>図1　処理系の典型的な流れ。コンパイルと解釈は排他的な二分類ではなく、LLVMのJITやバイトコード実行系のように組み合わせられる [1][2][5]。</p>
+<h2 id="h-概要">概要</h2>
+<p>コンパイラはプログラムを別の表現へ変換するソフトウェアであり、インタプリタはプログラムの意味を実行時に評価する実行系である。この違いは有用な出発点だが、実際の処理系には、コンパイルしてバイトコードを作り、それを仮想マシンが実行し、頻繁な部分だけJITコンパイルするような組み合わせが多い [1][2][5]。</p>
+<h2 id="h-この記事の見取り図">この記事の見取り図</h2>
+<ul>
+<li>「いつ、何へ変換するか」という軸で定義する。</li>
+<li>字句解析・構文解析・AST・中間表現・最適化・コード生成という共通構成を見る。</li>
+<li>AOT、バイトコードVM、JITを、性能だけでなく起動時間、移植性、デバッグ、運用で比較する。</li>
+</ul>
+<h2 id="h-定義と全体像">定義と全体像</h2>
+<h3 id="h-コンパイラ">コンパイラ</h3>
+<p>コンパイラは、ソースプログラムを機械語、アセンブリ、オブジェクトコード、バイトコード、または別の高水準言語など、後で実行・変換できる表現へ生成する。典型的には解析で構造を取り出し、中間表現を変換し、対象環境向けコードを生成する [1][3][4]。</p>
+<h3 id="h-インタプリタ">インタプリタ</h3>
+<p>インタプリタは、ソースコードまたは中間表現を読み取りながら、実行時に操作を評価する。単純な方式では構文木を直接たどり、実用的な方式では一度バイトコードへ変換して仮想マシンが命令を実行することもある。したがって「一行ずつ読む」は教育用の近似にとどまる [5]。</p>
+<h3 id="h-比較の軸">比較の軸</h3>
+<ol>
+<li>変換を実行前にまとめて行うか、実行時に行うか。</li>
+<li>結果を機械語、バイトコード、IRのどれとして保持するか。</li>
+<li>実行中の情報を使い、後から最適化・再コンパイルするか。</li>
+</ol>
+<h2 id="h-歴史的背景-古典的理解">歴史的背景・古典的理解</h2>
+<p>初期の高水準言語処理系では、数学的記法や記号的命令を機械が実行できる命令列へ変換すること自体が大きな課題だった。Grace HopperのA-0は初期のコンパイラ（またはその前身）として位置づけられ、1950年代にはIBMのFORTRANプロジェクトが、数式に近い記法から機械命令を生成する実用的な最適化コンパイラを発展させた [6][7]。</p>
+<p>古典的には「コンパイラは先に全部変換し、インタプリタはその場で実行する」と整理される。しかし実際の実行系は中間コード、サブルーチン、仮想機械などを組み合わせてきたため、この二分法は全体像ではない [7]。</p>
+<h2 id="h-現在の標準的理解">現在の標準的理解</h2>
+<h3 id="h-共通するフロントエンド">共通するフロントエンド</h3>
+<p>LLVMの言語実装チュートリアルは、字句解析器が入力をトークンへ分解し、パーサがASTを構築し、そのASTからLLVM IRを生成する流れを示す [1][2]。この段階はAOTにもJITにも共有できる。</p>
+<h3 id="h-中間表現と最適化">中間表現と最適化</h3>
+<p>GCCは、フロントエンドと最適化をつなぐGENERIC、最適化に適したGIMPLE、対象機械に近いRTLという複数の中間言語を用いる [3][4]。GIMPLEでは定数伝播やインライン展開などを行い、後段でRTLへ下げて機械依存の処理へ進む。</p>
+<h3 id="h-実行時コンパイル">実行時コンパイル</h3>
+<p>JITは、実行前に全プログラムを変換する代わりに、実行時に必要なコードをコンパイルする。LLVMのORC JIT資料は、IRモジュールを実行可能にし、シンボル参照を契機にコンパイルする構成や、遅延・並行・最適化の拡張を説明する [2]。</p>
+<h2 id="h-詳細説明">詳細説明</h2>
+<h3 id="h-aotコンパイル">AOTコンパイル</h3>
+<p>Ahead-of-Time（AOT）では実行前に対象環境向け成果物を作る。実行時の変換コストを減らしやすい一方、対象CPU・OSへの適合、配布物の管理、ビルド時間が課題になる [1][3]。</p>
+<h3 id="h-構文木を直接評価するインタプリタ">構文木を直接評価するインタプリタ</h3>
+<p>構文木を直接たどる方式は、処理系を小さく説明しやすい。反面、同じ構文を何度も評価する処理ではオーバーヘッドが生じやすい。教育用処理系や小さなDSLでは、実装の単純さが利点になる。</p>
+<h3 id="h-バイトコード仮想マシン">バイトコード仮想マシン</h3>
+<p>ソースを比較的コンパクトなバイトコードへ変換し、仮想マシンで実行する方式は、解析と実行を分離し、同じバイトコードを複数環境で扱いやすくする。Pythonの実行モデルは、ソースコードの実行を名前束縛、評価、例外などの規則として定義している [5]。</p>
+<h3 id="h-実務的な見方">実務的な見方</h3>
+<p>処理系を比較するときは、解析結果がASTか型付きASTかIRか、最適化が静的かプロファイル利用か、エラーが変換・ロード・実行のどこで検出されるか、生成物が環境依存か、デバッグ情報があるかを確認する。</p>
+<h2 id="h-応用-実践上の含意">応用・実践上の含意</h2>
+<p>処理系を選ぶとき、まず「速い方」を決めるのではなく用途を分解する。組み込みやコマンドラインツールでは起動時間と配布のしやすさ、長時間動作するサーバーでは定常性能とウォームアップ、教育用言語ではエラー表示と追跡可能性が重要になる。LLVMのチュートリアルが同じ小さな言語に静的コード生成とJITを段階的に加える構成は、設計上の選択肢を具体化する [1][2]。</p>
+<p>学習者が実装する場合は、字句解析、再帰下降または演算子順位解析、AST、簡単な評価器、IR生成の順に小さく検証すると、各段階の責任範囲を分離できる [1][2]。大規模処理系ではCFGや複数の最適化passを観察し、変換が一回で終わらず表現を保ちながら反復されることを確認できる [3][4]。</p>
+<h2 id="h-限界-論争点-未解決事項">限界・論争点・未解決事項</h2>
+<p>「コンパイラは高速、インタプリタは低速」という断定は避けるべきである。実性能はコードの性質、最適化、キャッシュ、起動時間、JITのウォームアップ、ランタイムに依存する。AOT成果物が常に移植性に乏しいとも限らず、IRやバイトコードを介した移植戦略もある。</p>
+<p>どこまでをコンパイラ、どこからをインタプリタと呼ぶかには用語上の揺れがある。処理系を一つのラベルで分類するより、変換の時点、表現、最適化の場所、実行方式を個別に記述する方が再現性の高い比較になる。性能比較を行うなら、入力、測定対象、ウォームアップ条件、ハードウェア、設定を明示する必要がある。</p>
+<h2 id="h-まとめ">まとめ</h2>
+<p>コンパイラはプログラムを別の表現へ変換する仕組み、インタプリタは実行時にプログラムの意味を評価する仕組みである。現代の処理系は字句・構文解析、AST、IR、最適化、コード生成、バイトコードVM、JITを組み合わせる。実務上の問いは二者択一ではなく、「どの表現を、いつ、どの情報で変換し、どの実行環境で動かすか」である。</p>
+<h2 id="h-参考ソース">参考ソース</h2>
+<ol>
+<li>LLVM Project, “My First Language Frontend with LLVM Tutorial”, 更新 2026-09-03, Accessed 2026-09-04. <a href="https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/">https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/</a></li>
+<li>LLVM Project, “Building a JIT: Starting out with KaleidoscopeJIT”, 更新 2026-09-01, Accessed 2026-09-04. <a href="https://llvm.org/docs/tutorial/BuildingAJIT1.html">https://llvm.org/docs/tutorial/BuildingAJIT1.html</a></li>
+<li>GNU Project, “Passes (GNU Compiler Collection Internals)”, Accessed 2026-09-04. <a href="https://gcc.gnu.org/onlinedocs/gccint/Passes.html">https://gcc.gnu.org/onlinedocs/gccint/Passes.html</a></li>
+<li>GNU Project, “Analysis and Optimization of GIMPLE Trees”, Accessed 2026-09-04. <a href="https://gcc.gnu.org/onlinedocs/gcc-9.1.0/gccint/Tree-SSA.html">https://gcc.gnu.org/onlinedocs/gcc-9.1.0/gccint/Tree-SSA.html</a></li>
+<li>Python Software Foundation, “The Python Language Reference: Execution model”, Accessed 2026-09-04. <a href="https://docs.python.org/3/reference/executionmodel.html">https://docs.python.org/3/reference/executionmodel.html</a></li>
+<li>Computer History Museum, “Software &amp; Languages”, Accessed 2026-09-04. <a href="https://www.computerhistory.org/timeline/software-languages/">https://www.computerhistory.org/timeline/software-languages/</a></li>
+<li>IBM Research, John Backus, “The History of FORTRAN I, II, and III”, 1978, Accessed 2026-09-04. <a href="https://research.ibm.com/publications/the-history-of-fortran-i-ii-and-iii--1">https://research.ibm.com/publications/the-history-of-fortran-i-ii-and-iii--1</a></li>
+</ol>
+<h2 id="h-更新履歴">更新履歴</h2>
+<ul>
+<li>2026-09-04: 初版作成。LLVM、GCC、Python、計算機史資料をもとに定義・歴史・実装方式を整理。</li>
+</ul>
+<h2 id="h-更新日付">更新日付</h2>
+<p>2026-09-04</p>
+</div><section class="related"><h2>関連記事</h2><ul><li><a href="/Evidence-Based-Slopedia-Pages/articles/building-a-programming-language/">プログラミング言語を自作するには</a></li><li><a href="/Evidence-Based-Slopedia-Pages/articles/knowledge-distillation/">AIや機械学習における蒸留</a></li><li><a href="/Evidence-Based-Slopedia-Pages/articles/gpt-6-astra-overview/">GPT-6 Astraの概要</a></li><li><a href="/Evidence-Based-Slopedia-Pages/articles/technology-engineering-computing-ai/computer-hardware/gpu-and-graphics-board/">GPUとは何か――グラフィックボードとの定義の違い</a></li><li><a href="/Evidence-Based-Slopedia-Pages/articles/technology-engineering-computing-ai/machine-learning-ai-models/transformer-and-llms/">Transformerの仕組みとLLMとの関連</a></li><li><a href="/Evidence-Based-Slopedia-Pages/articles/programming-language-design-tradeoffs/">プログラミング言語の設計思想とトレードオフ</a></li><li><a href="/Evidence-Based-Slopedia-Pages/articles/programming-language-design/">プログラミング言語の設計要件</a></li><li><a href="/Evidence-Based-Slopedia-Pages/articles/can-you-build-a-daw-solo/">個人開発でDAWは作れるか</a></li><li><a href="/Evidence-Based-Slopedia-Pages/articles/signal-processing-programming-basics/">信号処理プログラミングの基礎</a></li></ul></section></article></main></div><footer>Evidence Based Slopedia</footer></body></html>

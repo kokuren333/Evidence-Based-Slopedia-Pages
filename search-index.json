@@ -275,6 +275,17 @@
     "url": "/Evidence-Based-Slopedia-Pages/articles/programming-language-design-tradeoffs/"
   },
   {
+    "id": "art_01K1LD9G2722540B528356DBAA",
+    "title": "コンパイラとインタプリタ",
+    "slug": "compiler-interpreter",
+    "aliases": [],
+    "category": "技術・工学・コンピューティング・AI",
+    "subfield": "プログラミング言語・処理系",
+    "summary": "! 50 Assets/Infographics/コンパイラとインタプリタ compiler-interpreter infographic.webp",
+    "updated_at": "2026-09-04T05:35:16.002Z",
+    "url": "/Evidence-Based-Slopedia-Pages/articles/compiler-interpreter/"
+  },
+  {
     "id": "art_FA3A6B44A79B112D6F95006B73",
     "title": "GPUとは何か――グラフィックボードとの定義の違い",
     "slug": "technology-engineering-computing-ai/computer-hardware/gpu-and-graphics-board",
