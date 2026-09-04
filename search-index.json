@@ -183,7 +183,7 @@
     "category": "経済・ビジネス・仕事",
     "subfield": "労働政策・人的資本",
     "summary": "! 50 Assets/Infographics/work-care-guideline infographic.webp",
-    "updated_at": "2026-09-04T03:45:32.920Z",
+    "updated_at": "2026-09-04T04:27:29.540Z",
     "url": "/Evidence-Based-Slopedia-Pages/articles/work-care-management-guideline/"
   },
   {
@@ -194,7 +194,7 @@
     "category": "人文・歴史・文化・芸術",
     "subfield": "スポーツ",
     "summary": "! 50 Assets/Infographics/remy-cordero infographic.png",
-    "updated_at": "2026-09-04T03:53:30.263Z",
+    "updated_at": "2026-09-04T04:27:29.698Z",
     "url": "/Evidence-Based-Slopedia-Pages/articles/remy-cordero/"
   },
   {
@@ -205,7 +205,7 @@
     "category": "経済・ビジネス・仕事",
     "subfield": "宇宙産業・事業開発",
     "summary": "! 50 Assets/Infographics/hello-space-economy-spexa-2026.webp",
-    "updated_at": "2026-09-04T04:08:18.505Z",
+    "updated_at": "2026-09-04T04:27:29.856Z",
     "url": "/Evidence-Based-Slopedia-Pages/articles/cross-industry-spexa-joint-booth/"
   },
   {
@@ -216,7 +216,7 @@
     "category": "経済・ビジネス・仕事",
     "subfield": "経済安全保障と企業経営",
     "summary": "! 50 Assets/Infographics/economic-security-and-work.webp",
-    "updated_at": "2026-09-04T04:14:33.130Z",
+    "updated_at": "2026-09-04T04:27:30.009Z",
     "url": "/Evidence-Based-Slopedia-Pages/articles/economic-security-and-work/"
   },
   {
@@ -262,6 +262,17 @@
     "summary": "! 50 Assets/Infographics/signal-processing-programming-basics infographic.webp 図1 連続信号を標本化し、周波数解析・フィルタ・可視化へ進める基本パイプライン。標本化条件とFFT・フィルタの関係は 1 2 に基づく。",
     "updated_at": "2026-09-04T04:22:09.127Z",
     "url": "/Evidence-Based-Slopedia-Pages/articles/signal-processing-programming-basics/"
+  },
+  {
+    "id": "art_01K1LA3E0G79379056C2DA1A56",
+    "title": "プログラミング言語の設計思想とトレードオフ",
+    "slug": "programming-language-design-tradeoffs",
+    "aliases": [],
+    "category": "技術・工学・コンピューティング・AI",
+    "subfield": "プログラミング言語設計",
+    "summary": "! 50 Assets/Infographics/programming-language-design-tradeoffs.webp",
+    "updated_at": "2026-09-04T04:26:20.334Z",
+    "url": "/Evidence-Based-Slopedia-Pages/articles/programming-language-design-tradeoffs/"
   },
   {
     "id": "art_FA3A6B44A79B112D6F95006B73",
