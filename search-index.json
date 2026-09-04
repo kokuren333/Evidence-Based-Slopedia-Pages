@@ -561,6 +561,17 @@
     "url": "/Evidence-Based-Slopedia-Pages/articles/vietnam-ai-infrastructure/"
   },
   {
+    "id": "art_01K1M6RNIA1285ED2740F49919",
+    "title": "スマート農業はどう設計されるのか？東京工科大学・農研機構の共同研究を手がかりにAI・ロボット・データの効果と限界を検証する",
+    "slug": "smart-agriculture-engineering",
+    "aliases": [],
+    "category": "技術・工学・コンピューティング・AI",
+    "subfield": "AI・スマート農業",
+    "summary": "! スマート農業の技術パイプライン (50 Assets/Infographics/smart-agriculture-art 01K1M6RNIA1285ED2740F49919.webp) 図1 センシングからAI解析、ロボット実行、放牧管理までの構成と、実装上の効果・限界。共同研究の計画、農研機構の技術体系、農林水産省の実証整理に基づく概念図。 1 2 3 4",
+    "updated_at": "2026-09-04T12:44:41.927Z",
+    "url": "/Evidence-Based-Slopedia-Pages/articles/smart-agriculture-engineering/"
+  },
+  {
     "id": "art_FA3A6B44A79B112D6F95006B73",
     "title": "GPUとは何か――グラフィックボードとの定義の違い",
     "slug": "technology-engineering-computing-ai/computer-hardware/gpu-and-graphics-board",
